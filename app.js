@@ -3,15 +3,13 @@ let amigos = [];
 function adicionarAmigo() {
     let novoAmigo = document.querySelector('input').value;
 
-    if(novoAmigo == ''){
+    if(novoAmigo == '' || amigos.includes(novoAmigo)){
         alert('Por favor, insira um nome válido.'); //poderia ter sido encorporado ao texto acima do campo. além de uma validação de não ser adicionado número.
     } else {
         amigos.push(novoAmigo);
         amigosNaLista();
     }
 
-    
-    
     limpaCampo(); // no início, pensei que poderia jogar o código dela dentro da função, mas não é legal repetir código.
     alteraTexto('insira o nome do próximo amigo.'); //não era obrigatório no projeto, mas fiz mesmo assim ^^
 }
@@ -48,6 +46,8 @@ function sortearAmigo(){
     } else { 
         let resultado = document.getElementById('resultado');
         resultado.innerHTML = `O amigo secreto escolhido foi o ${amigos[geraIndiceAleatorio()]}`;
+
+        
     }
 }
 
