@@ -40,3 +40,18 @@ function amigosNaLista() {
     }
 
 }
+
+function sortearAmigo(){
+
+    if (amigos == ''){
+        alert('Esta ação ainda não está disponível.'); //então desativa o botão.
+    } else { 
+        let resultado = document.getElementById('resultado');
+        resultado.innerHTML = `O amigo secreto escolhido foi o ${amigos[geraIndiceAleatorio()]}`;
+    }
+}
+
+function geraIndiceAleatorio(){
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    return indiceAleatorio;
+}
